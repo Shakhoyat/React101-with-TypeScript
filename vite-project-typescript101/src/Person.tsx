@@ -21,10 +21,8 @@ const Person = (props: PersonProps) => {
                 </p>
                 )
             }
-            <button onClick={toggleInfo}>
-                {isShowInfo ? "Hide Info" : "Show Info"}
-            </button>
-          
+<p>{
+    }</p>        
         </div>
     );
 };
