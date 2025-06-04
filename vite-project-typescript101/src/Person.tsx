@@ -7,7 +7,11 @@ export interface PersonProps  {
 
 const Person = (props: PersonProps) => {
 
-  const [isShowInfo, setisShowInfo] = useState<boolean | null >(null);
+  const [isShowInfo, setShowInfo] = useState<boolean|null >(null);
+  const toggleInfo = () => {
+    setShowInfo((prev) =>!prev );
+    }
+
     return (
         <div>
             {
@@ -17,6 +21,9 @@ const Person = (props: PersonProps) => {
                 </p>
                 )
             }
+            <button onClick={toggleInfo}>
+                {isShowInfo ? "Hide Info" : "Show Info"}
+            </button>
           
         </div>
     );
