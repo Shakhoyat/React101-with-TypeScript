@@ -1,3 +1,4 @@
+import { useState } from "react";
 export interface PersonProps  {
     name: string;
     age: number;
@@ -5,11 +6,18 @@ export interface PersonProps  {
 }
 
 const Person = (props: PersonProps) => {
+
+  const [isShowInfo, setisShowInfo] = useState<boolean>(false);
     return (
         <div>
-            <p>
-                Name: {props.name}, Age: {props.age}, Is Student: {props.isStudent ? "Yes" : "No"}
-            </p>
+            {
+                isShowInfo && (
+                    <p>
+                    Name: {props.name}, Age: {props.age}, Is Student: {props.isStudent ? "Yes" : "No"}
+                </p>
+                )
+            }
+          
         </div>
     );
 };
