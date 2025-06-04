@@ -7,7 +7,7 @@ export interface PersonProps  {
 
 const Person = (props: PersonProps) => {
 
-  const [isShowInfo, setisShowInfo] = useState<boolean>(false);
+  const [isShowInfo, setisShowInfo] = useState<boolean | null >(null);
     return (
         <div>
             {
