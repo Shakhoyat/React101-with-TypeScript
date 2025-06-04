@@ -1,4 +1,4 @@
-interface PersonProps = {
+interface PersonProps  {
     name: string;
     age: number;
     isStudent: boolean;
