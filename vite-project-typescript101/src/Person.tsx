@@ -1,40 +1,25 @@
-import { useState } from "react";
-export interface PersonProps {
+import React, { useState, ChangeEvent } from "react";
+
+interface PersonProps {
   name: string;
   age: number;
   isStudent: boolean;
+  country: Countries;
+}
+export enum Countries {
+  USA = "USA",
+  Canada = "Canada",
+  UK = "UK",
+  Australia = "Australia",
+  India = "India",
+  Germany = "Germany",
+  France = "France",
+  Japan = "Japan",
 }
 
-const Person = (props: PersonProps) => {
-  const [personBio, setpersonBio] = useState<string | null>("");
-  const [isShowInfo, setShowInfo] = useState<boolean | null>(null);
-  const toggleInfo = () => {
-    setShowInfo((prev) => !prev);
-  };
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setpersonBio(e.target.value);
-  };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted with bio:", personBio);
-    setpersonBio("");
-  };
-  return (
-    <>
-      <p>Name: {props.name}</p>
-      <p>Age:</p>
-      <p>
-        This person {props.isStudent ? "is a student " : "is not a student"}
-      </p>
-
-      <p>
-        {" "}
-        {props.name} is {props.age} years old. Bio:
-        {!personBio ? "No bio available" : personBio}
-      </p>
-      <input onChange={handleChange} />
-    </>
-  );
-};
-
+return (
+  <>
+    <p>Country of Origin: {}</p>
+  </>
+);
 export default Person;
