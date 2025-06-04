@@ -1,11 +1,5 @@
-import React, { useState, ChangeEvent } from "react";
+import React from "react";
 
-interface PersonProps {
-  name: string;
-  age: number;
-  isStudent: boolean;
-  country: Countries;
-}
 export enum Countries {
   USA = "USA",
   Canada = "Canada",
@@ -17,9 +11,22 @@ export enum Countries {
   Japan = "Japan",
 }
 
-return (
-  <>
-    <p>Country of Origin: {}</p>
-  </>
-);
+interface PersonProps {
+  name: string;
+  age: number;
+  isStudent: boolean;
+  country: Countries;
+}
+
+const Person: React.FC<PersonProps> = ({ name, age, isStudent, country }) => {
+  return (
+    <>
+      <p>Name: {name}</p>
+      <p>Age: {age}</p>
+      <p>Student: {isStudent ? "Yes" : "No"}</p>
+      <p>Country of Origin: {country}</p>
+    </>
+  );
+};
+
 export default Person;
