@@ -14,6 +14,11 @@ const Person = (props: PersonProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setpersonBio(e.target.value);
   };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted with bio:", personBio);
+    setpersonBio("");
+  };
   return (
     <>
       <p>Name: {props.name}</p>
