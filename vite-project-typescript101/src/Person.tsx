@@ -1,4 +1,4 @@
-interface PersonProps  {
+export interface PersonProps  {
     name: string;
     age: number;
     isStudent: boolean;
